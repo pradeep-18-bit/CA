@@ -1,0 +1,200 @@
+/* SCOPE ALL STAFF LOGIN STYLES */
+.staff-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ⭐ ADD FULL BACKGROUND IMAGE */
+.staff-page {
+  width: 100%;
+  height: 100vh;
+  /* background-image: url("../../images/books.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+
+  position: relative;  /* required for stars */
+  overflow: hidden;
+}
+
+/* ⭐ STARS LAYER (added) */
+.stars-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1; /* behind form */
+}
+
+/* ⭐ STAR STYLE */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: starFloat 6s ease-in-out infinite, glowStar 2s infinite alternate;
+}
+
+.star.small { width: 3px; height: 3px; opacity: 0.7; }
+.star.mid   { width: 5px; height: 5px; }
+.star.big   { width: 8px; height: 8px; filter: drop-shadow(0 0 8px white); }
+
+/* ⭐ FLOAT ANIMATION */
+@keyframes starFloat {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(15px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* ⭐ GLOWING EFFECT */
+@keyframes glowStar {
+  0% { box-shadow: 0 0 4px rgba(255,255,255,0.3); }
+  100% { box-shadow: 0 0 12px rgba(255,255,255,1); }
+}
+
+/* CENTER PAGE */
+.staff-page .login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  z-index: 10; /* box above stars */
+}
+
+/* LOGIN CARD */
+.staff-page .login-box {
+  width: 100%;
+  max-width: 370px;
+  /* height: 390px; */
+   min-height: 390px;
+
+  background: rgba(255, 255, 255, 0.82);  /* ← similar to your example (#ffffffd7) */
+  backdrop-filter: blur(6px);             /* ← adds the frosted glass effect */
+  -webkit-backdrop-filter: blur(6px);     
+
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35); /* soft border like your image */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* TITLE */
+.staff-page .login-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #073d7f;
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+/* FORM */
+.staff-page form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* FORM GROUP */
+.staff-page .form-group {
+  margin-bottom: 7px;
+  width: 100%;
+}
+
+.staff-page .form-group label {
+  display: block;
+  margin-bottom:7px;
+  font-size: 15px;
+  font-weight: bold;
+  color:  #07097f;
+}
+
+/* INPUT */
+.staff-page .form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #f4f4f4;
+}
+
+.staff-page .form-group input::placeholder {
+  color: #888;
+}
+
+/* BUTTON */
+.staff-page button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #073d7f;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.staff-page button:hover {
+  opacity: 0.9;
+}
+
+.staff-page button:disabled {
+  opacity: 0.6;
+}
+
+/* ERROR MESSAGES */
+.staff-page .error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: left !important;
+}
+
+.staff-page .general-error {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 15px;
+  /* font-weight: bold; */
+  margin: 0 0 12px 0;
+  color: var(--error);
+  /* background: #fff6f6; */
+  padding: 10px 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Red border on input error */
+.error-input {
+  border: 1px solid red !important;
+}
+
+/* Blue border on input focus */
+.staff-page .form-group input:focus {
+  outline: none;
+  border: 1px solid #07097f !important;
+}
+.staff-page .form-group input,
+.staff-page .form-group select {
+  background: rgba(255, 255, 255, 0.95); /* brighter → stands out */
+  border: 1px solid #b5b5b5;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.15);
+  padding: 10px 12px;
+  font-size: 15px;
+  border-radius: 8px;
+}

@@ -1,0 +1,310 @@
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+ 
+/* .user-table thead {
+  background-color: #007bff;
+  color: #fff;
+}
+  */
+.user-table th {
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+ 
+.user-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e6e9f0;
+  color: #333;
+  font-size: 14px;
+}
+ 
+.user-table tbody tr:hover {
+  background-color: #f4f9ff;
+  transition: 0.2s;
+}
+ 
+.user-table td[colspan="7"] {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+}
+ 
+/* Action Buttons */
+.user-table button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  margin: 0 3px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+ 
+.user-table button:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+ 
+.user-table button:first-child svg {
+  color: #007bff;
+}
+ 
+.user-table button:last-child svg {
+  color: #dc3545;
+}
+/* ////////////////////////////// */
+ 
+ 
+ 
+ 
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #f3f6fb;
+  color: #333;
+}
+ 
+/* ===== Overlay (Dark Blurred Background) ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.25s ease-in-out;
+}
+ 
+/* ===== Modal Popup Card ===== */
+.modal-content {
+  background: #ffffff;
+  width: 700px;
+  max-width: 90%;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  max-height: 90vh;
+  padding: 32px 40px;
+  animation: popupScale 0.3s ease;
+  position: relative;
+  /* border-top: 6px solid #007bff;  */
+}
+ 
+/* Subtle Glow Effect */
+.modal-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(
+    circle at top right,
+    rgba(0, 123, 255, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+ 
+/* ===== Modal Header ===== */
+.modal-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 24px;
+}
+ 
+/* ===== Form Layout ===== */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+ 
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.form-row label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+ 
+.form-row input,
+.form-row select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+ 
+.form-row input:focus,
+.form-row select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+ 
+.error {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 4px;
+}
+ 
+/* ===== Permissions Section ===== */
+.permissions-grid {
+  grid-column: span 2;
+  background: #f9fbff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+ 
+.perm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+ 
+.perm-row label {
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+ 
+/* ===== Buttons ===== */
+.modal-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+ 
+.modal-buttons button {
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+ 
+/* Cancel */
+.modal-buttons button[type="button"] {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+.modal-buttons button[type="button"]:hover {
+  background-color: #d1d5db;
+}
+ 
+/* Submit */
+.modal-buttons button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+.modal-buttons button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+ 
+/* ===== Toggle Switch ===== */
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #d1d5db;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+ 
+.toggle::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+ 
+.toggle.active {
+  background-color: #007bff;
+}
+ 
+.toggle.active::before {
+  transform: translateX(20px);
+}
+ 
+/* ===== Animations ===== */
+@keyframes popupScale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+ 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+ 
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+ 
+  .permissions-grid {
+    grid-template-columns: 1fr;
+  }
+ 
+  .modal-content {
+    width: 90%;
+    padding: 24px;
+  }
+}
+ 
+ 

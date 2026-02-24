@@ -1,0 +1,120 @@
+/* Main container - 3 side-by-side cards */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* Card Wrapper */
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Titles */
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* Quick Actions List */
+.actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.action-item:hover {
+  background: #f3f4f6;
+}
+
+/* Progress Indicators */
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.progress-bar {
+  background: #e7e7e7;
+  height: 6px;
+  border-radius: 5px;
+  margin-bottom: 18px;
+}
+
+.progress-fill {
+  height: 6px;
+  background: #062b83; /* blue from your screenshot */
+  border-radius: 5px;
+}
+
+/* Compliance */
+.compliance-center {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.compliance-rate {
+  font-size: 40px;
+  color: #10b981; /* green */
+  margin: 0;
+}
+
+.compliance-text {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Status rows */
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin: 8px 0;
+}
+
+.status-green {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.status-yellow {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.status-red {
+  color: #ef4444;
+  font-weight: 600;
+}
+.action-item {
+  cursor: pointer;
+}
+.action-item:hover {
+  background: #f3f4f6;
+}
