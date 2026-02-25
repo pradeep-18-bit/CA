@@ -15,16 +15,13 @@ services:
       - mysql_data:/var/lib/mysql
 
   backend:
-    build: ./backend
+    build: ./ca_backend
     container_name: backend
     restart: always
     ports:
       - "5000:5000"
     environment:
-      DB_HOST: db
-      DB_USER: root
-      DB_PASSWORD: root
-      DB_NAME: myappdb
+      - ASPNETCORE_URLS=http://+:5000
     depends_on:
       - db
 
