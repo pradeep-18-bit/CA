@@ -1,13 +1,18 @@
-FROM node:18
-
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-COPY package*.json ./
+COPY *.csproj ./
+RUN dotnet restore
 
-RUN npm install
+COPY . ./
+RUN dotnet publish -c Release -o out
 
-COPY . .
+# Runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+COPY --from=build /app/out .
 
 EXPOSE 5000
 
-CMD ["npm", "start"]
+ENTRYPOINT ["dotnet", "ca_backend.dll"]
