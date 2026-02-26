@@ -8,7 +8,7 @@ export default function DueTodayPageStaff() {
   const [loading, setLoading] = useState(true);
 
   const API_BASE =
-    "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/ComplianceCalendar";
+    "http://13.127.116.243:5000/api/ComplianceCalendar";
 
   // ✔ FIXED — headers moved INSIDE useCallback
   const loadDueToday = useCallback(async () => {

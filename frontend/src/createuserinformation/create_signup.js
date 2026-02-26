@@ -148,7 +148,7 @@
 
 //     try {
 //       const response = await fetch(
-//         "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/User/create-user",
+//         "http://13.127.116.243:5000/api/User/create-user",
 //         {
 //           method: "POST",
 //           headers: {
@@ -512,7 +512,7 @@ function Signuppage() {
 
     try {
       const response = await fetch(
-        "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/User/create-user",
+        "http://13.127.116.243:5000/api/User/create-user",
         {
           method: "POST",
           headers: {

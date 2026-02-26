@@ -6,7 +6,7 @@ export default function ViewActivityLogPage_staff() {
   const THEME_COLOR = "#073D7F";
 
   const API_BASE =
-    "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/ComplianceCalendar";
+    "http://13.127.116.243:5000/api/ComplianceCalendar";
 
   const [activityLogs, setActivityLogs] = useState([]);
   const [loading, setLoading] = useState(false);

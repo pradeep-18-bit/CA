@@ -26,7 +26,7 @@ export default function Sidebar({ children }) {
 
     try {
       const response = await fetch(
-        "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/staff",
+        "http://13.127.116.243:5000/api/staff",
         {
           headers: { "ngrok-skip-browser-warning": "true" },
         }

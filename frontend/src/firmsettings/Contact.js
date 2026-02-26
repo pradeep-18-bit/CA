@@ -2,7 +2,7 @@
 // import React, { useState, useEffect } from "react";
 // import "./Global.css";
 
-// const API = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/contact-setting";
+// const API = "http://13.127.116.243:5000/api/contact-setting";
 
 // export default function Contact() {
 //   const [formData, setFormData] = useState({
@@ -265,7 +265,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const API = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/contact-setting";
+const API = "http://13.127.116.243:5000/api/contact-setting";
 
 export default function Contact() {
   const [formData, setFormData] = useState({

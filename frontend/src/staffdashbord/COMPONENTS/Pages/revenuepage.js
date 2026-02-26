@@ -5,7 +5,7 @@ export default function RevenuePageStaff() {
   const navigate = useNavigate();
 
   const API_URL =
-    "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/invoices";
+    "http://13.127.116.243:5000/api/invoices";
 
   const [invoices, setInvoices] = useState([]);
   const [totalRevenue, setTotalRevenue] = useState(0);

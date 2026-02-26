@@ -7,7 +7,7 @@ import FilingModal from "../FILLING TRACKER/COMPONENTS/FillingModal";
 import "../Global.css";
 
 const FILING_API =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/filingtracker";
+  "http://13.127.116.243:5000/api/filingtracker";
 
 export default function FilingTracker() {
   const [filings, setFilings] = useState([]);

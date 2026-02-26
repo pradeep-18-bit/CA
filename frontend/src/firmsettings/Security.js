@@ -13,7 +13,7 @@
 
 // export default function Filmsecurity() {
 //   const API =
-//     "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/security-setting";
+//     "http://13.127.116.243:5000/api/security-setting";
 
 //   // States
 //   const [twoFA, setTwoFA] = useState(true);
@@ -253,7 +253,7 @@ export default function Filmsecurity() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const API_URL = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/security-setting";
+  const API_URL = "http://13.127.116.243:5000/api/security-setting";
 
   // Fetch security settings on component mount
   useEffect(() => {

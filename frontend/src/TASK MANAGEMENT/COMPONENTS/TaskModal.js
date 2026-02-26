@@ -2,9 +2,9 @@
 // import React, { useState, useEffect } from "react";
 
 // const CLIENTS_ALL_API =
-//   "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients/all";
+//   "http://13.127.116.243:5000/api/clients/all";
 // const CLIENTS_API =
-//   "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients";
+//   "http://13.127.116.243:5000/api/clients";
 
 // export default function TaskModal({
 //   task,
@@ -311,9 +311,9 @@
 import React, { useState, useEffect } from "react";
 
 const CLIENTS_ALL_API =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients/all";
+  "http://13.127.116.243:5000/api/clients/all";
 const CLIENTS_API =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients";
+  "http://13.127.116.243:5000/api/clients";
 
 export default function TaskModal({
   task,

@@ -81,7 +81,7 @@
 
 //     try {
 //       const response = await fetch(
-//         "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/Auth/change-password",
+//         "http://13.127.116.243:5000/api/Auth/change-password",
 //         {
 //           method: "POST",
 //           headers: {
@@ -323,7 +323,7 @@ function ChangePassword() {
 
     try {
       const response = await fetch(
-        "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/Auth/change-password",
+        "http://13.127.116.243:5000/api/Auth/change-password",
         {
           method: "POST",
           headers: {

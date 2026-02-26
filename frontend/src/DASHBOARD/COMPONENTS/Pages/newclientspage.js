@@ -5,7 +5,7 @@ export default function NewClientsPage() {
   const navigate = useNavigate();
  
   const API_URL =
-    "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients";
+    "http://13.127.116.243:5000/api/clients";
  
   const [clients, setClients] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);

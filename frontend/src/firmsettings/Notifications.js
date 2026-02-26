@@ -14,7 +14,7 @@
 
 // export default function Filmnotifaction() {
 //   const API =
-//     "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/notification-setting";
+//     "http://13.127.116.243:5000/api/notification-setting";
 
 //   // STATES
 //   const [gstReminder, setGstReminder] = useState(true);
@@ -300,7 +300,7 @@ export default function Filmnotifaction() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const API_URL = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/notification-setting";
+  const API_URL = "http://13.127.116.243:5000/api/notification-setting";
 
   // Fetch notification settings on component mount
   useEffect(() => {

@@ -21,7 +21,7 @@ export default function RevenuePage() {
   const THEME_COLOR = "#073D7F";
 
   const API_URL =
-    "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/invoices";
+    "http://13.127.116.243:5000/api/invoices";
 
   // UI States
   const [view, setView] = useState("monthly");

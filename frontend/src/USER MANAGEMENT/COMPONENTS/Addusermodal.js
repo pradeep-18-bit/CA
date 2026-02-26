@@ -25,7 +25,7 @@
 //   useEffect(() => {
 //     if (!editing) {
 //       fetch(
-//         "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/user/all",
+//         "http://13.127.116.243:5000/api/user/all",
 //         { headers: { "ngrok-skip-browser-warning": "true" } }
 //       )
 //         .then((res) => res.json())
@@ -359,7 +359,7 @@ const AddUserModal = ({ form, setForm, onClose, onSubmit, editing }) => {
   useEffect(() => {
     if (!editing) {
       fetch(
-        "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/user/all",
+        "http://13.127.116.243:5000/api/user/all",
         { headers: { "ngrok-skip-browser-warning": "true" } }
       )
         .then((res) => res.json())

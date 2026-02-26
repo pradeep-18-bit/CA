@@ -34,7 +34,7 @@ export default function CandidatesPage() {
     const fetchActiveClients = async () => {
       try {
         const response = await fetch(
-          "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients",
+          "http://13.127.116.243:5000/api/clients",
           {
             method: "GET",
             headers: {

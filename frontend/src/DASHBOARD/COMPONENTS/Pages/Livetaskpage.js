@@ -14,7 +14,7 @@ export default function LiveTasksPage() {
   });
 
   const API_TASKS =
-    "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/tasks";
+    "http://13.127.116.243:5000/api/tasks";
 
   const headers = {
     Accept: "application/json",

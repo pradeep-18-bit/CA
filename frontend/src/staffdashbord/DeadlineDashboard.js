@@ -113,7 +113,7 @@ export default function StaffDeadlineDashboard() {
   const fetchActivities = async () => {
     try {
       const res = await fetch(
-        "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/ComplianceCalendar",
+        "http://13.127.116.243:5000/api/ComplianceCalendar",
         {
           headers: { Accept: "application/json", "ngrok-skip-browser-warning": "true" },
         }
@@ -149,7 +149,7 @@ export default function StaffDeadlineDashboard() {
     const loadUpcoming = async () => {
       try {
         const res = await fetch(
-          "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/ComplianceCalendar",
+          "http://13.127.116.243:5000/api/ComplianceCalendar",
           {
             headers: { Accept: "application/json", "ngrok-skip-browser-warning": "true" },
           }
@@ -179,7 +179,7 @@ export default function StaffDeadlineDashboard() {
     const loadDueToday = async () => {
       try {
         const res = await fetch(
-          "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/ComplianceCalendar",
+          "http://13.127.116.243:5000/api/ComplianceCalendar",
           {
             headers: { Accept: "application/json", "ngrok-skip-browser-warning": "true" },
           }
@@ -208,7 +208,7 @@ export default function StaffDeadlineDashboard() {
     const loadTasksTotal = async () => {
       try {
         const res = await fetch(
-          "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/tasks",
+          "http://13.127.116.243:5000/api/tasks",
           {
             headers: { Accept: "application/json", "ngrok-skip-browser-warning": "true" },
           }
@@ -229,7 +229,7 @@ export default function StaffDeadlineDashboard() {
     const fetchClients = async () => {
       try {
         const res = await fetch(
-          "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients",
+          "http://13.127.116.243:5000/api/clients",
           {
             method: "GET",
             headers: {
@@ -275,7 +275,7 @@ export default function StaffDeadlineDashboard() {
     const loadTasks = async () => {
       try {
         const res = await fetch(
-          "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/tasks",
+          "http://13.127.116.243:5000/api/tasks",
           {
             method: "GET",
             headers: {
@@ -307,7 +307,7 @@ export default function StaffDeadlineDashboard() {
     const loadRevenue = async () => {
       try {
         const res = await fetch(
-          "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/invoices",
+          "http://13.127.116.243:5000/api/invoices",
           {
             headers: { Accept: "application/json", "ngrok-skip-browser-warning": "true" },
           }
@@ -342,7 +342,7 @@ export default function StaffDeadlineDashboard() {
     const loadPendingInvoices = async () => {
       try {
         const res = await fetch(
-          "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/invoices",
+          "http://13.127.116.243:5000/api/invoices",
           {
             headers: { Accept: "application/json", "ngrok-skip-browser-warning": "true" },
           }

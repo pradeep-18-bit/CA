@@ -7,7 +7,7 @@ import AddUserModal from "./COMPONENTS/Addusermodal";
 import "../Global.css";
 
 const API_BASE =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/staff";
+  "http://13.127.116.243:5000/api/staff";
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import ComplianceOverviewChart from "./ComplianceOverViewChart";
 import { ExportIcon } from "./DashbaordHeader";
 
-const FILING_API = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/filingtracker";
-const CALENDAR_API = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/ComplianceCalendar";
+const FILING_API = "http://13.127.116.243:5000/api/filingtracker";
+const CALENDAR_API = "http://13.127.116.243:5000/api/ComplianceCalendar";
 
 const ComplianceStatus = () => {
   const [loading, setLoading] = useState(true);

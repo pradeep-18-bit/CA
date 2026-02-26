@@ -1,18 +1,25 @@
-# Build stage
+# ---------- BUILD STAGE ----------
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /app
 
-COPY *.csproj ./
-RUN dotnet restore
+WORKDIR /src
 
-COPY . ./
-RUN dotnet publish -c Release -o out
+COPY ca_backend/ca_backend.csproj ca_backend/
+RUN dotnet restore ca_backend/ca_backend.csproj
 
-# Runtime stage
+COPY ca_backend/. ca_backend/
+
+WORKDIR /src/ca_backend
+RUN dotnet publish -c Release -o /app/publish
+
+
+# ---------- RUNTIME STAGE ----------
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
+
 WORKDIR /app
-COPY --from=build /app/out .
+COPY --from=build /app/publish .
+
+ENV ASPNETCORE_URLS=http://+:5000
 
 EXPOSE 5000
 
-ENTRYPOINT ["dotnet", "ca_backend.dll"]
+ENTRYPOINT ["dotnet","ca_backend.dll"]

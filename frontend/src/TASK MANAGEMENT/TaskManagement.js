@@ -7,7 +7,7 @@ import TaskList from "../TASK MANAGEMENT/COMPONENTS/TaskList";
 import TaskModal from "../TASK MANAGEMENT/COMPONENTS/TaskModal";
 import "../Global.css";
 
-const API = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev";
+const API = "http://13.127.116.243:5000";
 const API_TASKS = `${API}/api/tasks`;
 const API_STAFF = `${API}/api/staff`;
 

@@ -37,7 +37,7 @@
 
 //     try {
 //       const response = await fetch(
-//         "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/Auth/staff-login",
+//         "http://13.127.116.243:5000/api/Auth/staff-login",
 //         {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },
@@ -71,7 +71,7 @@
 //       }
 
 //       const permResponse = await fetch(
-//         "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/staff",
+//         "http://13.127.116.243:5000/api/staff",
 //         {
 //           headers: {
 //             Authorization: `Bearer ${data.token}`,
@@ -243,7 +243,7 @@ function StaffLogin() {
 
     try {
       const response = await fetch(
-        "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/Auth/staff-login",
+        "http://13.127.116.243:5000/api/Auth/staff-login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -277,7 +277,7 @@ function StaffLogin() {
       }
 
       const permResponse = await fetch(
-        "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/staff",
+        "http://13.127.116.243:5000/api/staff",
         {
           headers: {
             Authorization: `Bearer ${data.token}`,

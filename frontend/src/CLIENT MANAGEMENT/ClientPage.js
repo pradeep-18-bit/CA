@@ -18,10 +18,10 @@ const initialFormState = {
 };
  
 const API_URL =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients";
+  "http://13.127.116.243:5000/api/clients";
  
 const ALL_CLIENTS_URL =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients/all";
+  "http://13.127.116.243:5000/api/clients/all";
  
 const tableHeaderStyle = {
   padding: "12px 15px",

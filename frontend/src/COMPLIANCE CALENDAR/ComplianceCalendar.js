@@ -22,8 +22,8 @@ const ComplianceCalendar = () => {
   const [showAllActivities, setShowAllActivities] = useState(false);
   const [showAddDeadlineCard, setShowAddDeadlineCard] = useState(false);
 
-  const API_BASE = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/compliancecalendar";
-  const STAFF_API = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/staff";
+  const API_BASE = "http://13.127.116.243:5000/api/compliancecalendar";
+  const STAFF_API = "http://13.127.116.243:5000/api/staff";
 
   useEffect(() => {
     fetchDeadlines();
@@ -80,7 +80,7 @@ const ComplianceCalendar = () => {
 
   const fetchClients = async () => {
     try {
-      const response = await fetch("https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients/all", { headers: { 'ngrok-skip-browser-warning': 'true' } });
+      const response = await fetch("http://13.127.116.243:5000/api/clients/all", { headers: { 'ngrok-skip-browser-warning': 'true' } });
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       setClients(await response.json());
     } catch (err) {

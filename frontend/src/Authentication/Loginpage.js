@@ -32,7 +32,7 @@
 
 // //     try {
 // //       const response = await fetch(
-// //         "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/Auth/login",
+// //         "http://13.127.116.243:5000/api/Auth/login",
 // //         {
 // //           method: "POST",
 // //           headers: { "Content-Type": "application/json" },
@@ -198,7 +198,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/Auth/login",
+        "http://13.127.116.243:5000/api/Auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -630,7 +630,7 @@ export default Login;
 
 //     try {
 //       const response = await fetch(
-//         "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/Auth/login",
+//         "http://13.127.116.243:5000/api/Auth/login",
 //         {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },

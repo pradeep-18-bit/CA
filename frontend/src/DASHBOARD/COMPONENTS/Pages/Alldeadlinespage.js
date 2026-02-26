@@ -14,7 +14,7 @@ export default function UpcomingDeadlinesPage() {
   });
 
   const API_BASE =
-    "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/ComplianceCalendar";
+    "http://13.127.116.243:5000/api/ComplianceCalendar";
 
   const headers = {
     Accept: "application/json",

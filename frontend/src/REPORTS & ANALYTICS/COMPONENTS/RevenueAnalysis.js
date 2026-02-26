@@ -18,8 +18,8 @@ import {
    CONFIG / HELPERS
    =========================== */
 
-const INVOICES_API = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/invoices";
-const CLIENTS_API = "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients";
+const INVOICES_API = "http://13.127.116.243:5000/api/invoices";
+const CLIENTS_API = "http://13.127.116.243:5000/api/clients";
 const NUM_MONTHS = 6;
 
 const parseDateSafe = (v) => {

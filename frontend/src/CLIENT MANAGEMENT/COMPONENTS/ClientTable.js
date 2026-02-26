@@ -193,7 +193,7 @@ export default function ClientTable({
   };
  
   const API_URL =
-    "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients";
+    "http://13.127.116.243:5000/api/clients";
  
   const handleSave = async () => {
     if (!editedClient.id) {

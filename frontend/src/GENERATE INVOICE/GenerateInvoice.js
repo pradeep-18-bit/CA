@@ -5,9 +5,9 @@ import html2canvas from "html2canvas";
 // import CaLogo from "./ca-logo.jpg";
 
 const API_BASE =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/invoices";
+  "http://13.127.116.243:5000/api/invoices";
 const CLIENTS_API =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients";
+  "http://13.127.116.243:5000/api/clients";
 const GST_RATE = 0.18;
 
 export default function GenerateInvoicePage() {

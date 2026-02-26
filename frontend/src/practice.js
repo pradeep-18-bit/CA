@@ -21,7 +21,7 @@ const initialFormState = {
 
 // ✅ Replace with your working ngrok API
 const API_URL =
-  "https://posthemorrhagic-nonequilaterally-caroline.ngrok-free.dev/api/clients";
+  "http://13.127.116.243:5000/api/clients";
 
 const ClientsPage = () => {
   const [clients, setClients] = useState([]);
