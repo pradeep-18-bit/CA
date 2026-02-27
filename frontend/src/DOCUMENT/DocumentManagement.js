@@ -106,7 +106,7 @@ const formatFileSize = (bytes) => {
 
 // --- MAIN COMPONENT ---
 
-const API_BASE_URL = 'http://13.127.116.243:5000';
+const API_BASE_URL = '/api';
 
 const DocumentManagement = () => {
   const [documents, setDocuments] = useState([]);

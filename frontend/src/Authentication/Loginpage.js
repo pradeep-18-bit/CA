@@ -1,5 +1,5 @@
 
-// // import React, { useState } from "react";
+// // import React, { useEffect, useState } from "react";
 // // import { useNavigate } from "react-router-dom";
 // // import "./login.css";
 // // import tradingBg from "../images/trading.jpg";
@@ -32,7 +32,7 @@
 
 // //     try {
 // //       const response = await fetch(
-// //         "http://13.127.116.243:5000/api/Auth/login",
+// //         "/api/Auth/login",
 // //         {
 // //           method: "POST",
 // //           headers: { "Content-Type": "application/json" },
@@ -112,6 +112,7 @@
 // //           <form className="login-form" onSubmit={handleSubmit}>
 // //             <h1 className="login-title">Login</h1>
 
+
 // //             <div className="form-group">
 // //               <label className="form-label">Email*</label>
 // //               <input
@@ -161,7 +162,7 @@
 
 
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 import tradingBg from "../images/trading.jpg";
@@ -171,7 +172,29 @@ function Login() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [apiStatus, setApiStatus] = useState("checking");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const checkApi = async () => {
+      try {
+        const response = await fetch("/api/System/ping");
+        if (!isMounted) return;
+        setApiStatus(response.ok ? "connected" : "disconnected");
+      } catch (error) {
+        if (!isMounted) return;
+        setApiStatus("disconnected");
+      }
+    };
+
+    checkApi();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const validate = () => {
     const err = {};
@@ -198,7 +221,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "http://13.127.116.243:5000/api/Auth/login",
+        "/api/Auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -285,6 +308,10 @@ function Login() {
 
           <form className="login-form" onSubmit={handleSubmit}>
             <h1 className="login-title">Admin Login</h1>
+
+            <p className={`api-status ${apiStatus}`}>
+              API Status: {apiStatus === "checking" ? "Checking..." : apiStatus}
+            </p>
 
             <div className="form-group">
               <label className="form-label">Email*</label>
@@ -594,7 +621,7 @@ export default Login;
 
 
 
-// import React, { useState } from "react";
+// import React, { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 // import "./login.css";
 // import tradingBg from "../images/trading.jpg";
@@ -630,7 +657,7 @@ export default Login;
 
 //     try {
 //       const response = await fetch(
-//         "http://13.127.116.243:5000/api/Auth/login",
+//         "/api/Auth/login",
 //         {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },

@@ -18,7 +18,7 @@ import {
  * Uses the same ALL_CLIENTS_URL from ClientsPage to fetch clients and derive services.
  */
 const ALL_CLIENTS_URL =
-  "http://13.127.116.243:5000/api/clients/all";
+  "/api/clients/all";
 
 const KNOWN_SERVICE_COLORS = {
   "ITR Filing": "#8b7cf1",

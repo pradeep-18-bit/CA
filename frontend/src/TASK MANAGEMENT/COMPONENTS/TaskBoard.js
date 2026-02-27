@@ -22,7 +22,7 @@ export default function TaskBoard({
     const fetchStaff = async () => {
       try {
         const res = await fetch(
-          "http://13.127.116.243:5000/api/staff",
+          "/api/staff",
           { headers: { "ngrok-skip-browser-warning": "true" } }
         );
 

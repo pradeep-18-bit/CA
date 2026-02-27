@@ -8,7 +8,7 @@ export default function LiveTasksPageStaff() {
   const [loading, setLoading] = useState(true);
 
   const API_TASKS =
-    "http://13.127.116.243:5000/api/tasks";
+    "/api/tasks";
 
   // ✅ FIX: Move headers INSIDE useCallback to avoid dependency warnings
   const loadTasks = useCallback(async () => {

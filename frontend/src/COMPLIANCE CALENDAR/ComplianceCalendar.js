@@ -22,8 +22,8 @@ const ComplianceCalendar = () => {
   const [showAllActivities, setShowAllActivities] = useState(false);
   const [showAddDeadlineCard, setShowAddDeadlineCard] = useState(false);
 
-  const API_BASE = "http://13.127.116.243:5000/api/compliancecalendar";
-  const STAFF_API = "http://13.127.116.243:5000/api/staff";
+  const API_BASE = "/api/compliancecalendar";
+  const STAFF_API = "/api/staff";
 
   useEffect(() => {
     fetchDeadlines();
@@ -80,7 +80,7 @@ const ComplianceCalendar = () => {
 
   const fetchClients = async () => {
     try {
-      const response = await fetch("http://13.127.116.243:5000/api/clients/all", { headers: { 'ngrok-skip-browser-warning': 'true' } });
+      const response = await fetch("/api/clients/all", { headers: { 'ngrok-skip-browser-warning': 'true' } });
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       setClients(await response.json());
     } catch (err) {

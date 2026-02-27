@@ -12,7 +12,7 @@
 //     const fetchStaff = async () => {
 //       try {
 //         const res = await fetch(
-//           "http://13.127.116.243:5000/api/staff",
+//           "/api/staff",
 //           { headers: { "ngrok-skip-browser-warning": "true" } }
 //         );
 
@@ -169,7 +169,7 @@ export default function TaskList({ tasks = [], onEdit, onDelete }) {
     const fetchStaff = async () => {
       try {
         const res = await fetch(
-          "http://13.127.116.243:5000/api/staff",
+          "/api/staff",
           { headers: { "ngrok-skip-browser-warning": "true" } }
         );
  

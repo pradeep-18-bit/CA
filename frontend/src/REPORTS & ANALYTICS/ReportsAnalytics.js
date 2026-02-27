@@ -8,10 +8,10 @@ import ComplianceStatus from "../REPORTS & ANALYTICS/COMPONENTS/ComplianceStatus
 import RevenueAnalysis from "../REPORTS & ANALYTICS/COMPONENTS/RevenueAnalysis";
 
 // API endpoints used in your other files (kept same as your examples)
-const INVOICES_API = "http://13.127.116.243:5000/api/invoices";
-const CLIENTS_API = "http://13.127.116.243:5000/api/clients";
-const TIME_TRACKER_API = "http://13.127.116.243:5000/api/time-tracker";
-const FILING_API = "http://13.127.116.243:5000/api/filingtracker";
+const INVOICES_API = "/api/invoices";
+const CLIENTS_API = "/api/clients";
+const TIME_TRACKER_API = "/api/time-tracker";
+const FILING_API = "/api/filingtracker";
 
 // helper: safely parse invoiceItems JSON and sum amounts
 const calculateTotalAmount = (invoiceItems) => {

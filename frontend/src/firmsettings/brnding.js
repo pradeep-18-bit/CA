@@ -13,10 +13,10 @@
 
 // export default function Branding() {
 //   const API =
-//     "http://13.127.116.243:5000/api/branding-setting";
+//     "/api/branding-setting";
 
 //   const BASE_URL =
-//     "http://13.127.116.243:5000";
+//     "/api";
 
 //   const [logoFile, setLogoFile] = useState(null);
 //   const [logoPreview, setLogoPreview] = useState(null);
@@ -384,7 +384,7 @@ export default function Filmbranding() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const API_URL = "http://13.127.116.243:5000/api/branding-setting";
+  const API_URL = "/api/branding-setting";
 
   // Fetch branding settings on component mount
   useEffect(() => {
@@ -530,13 +530,13 @@ export default function Filmbranding() {
     
     // If it's a relative path, prepend the base URL
     if (cleanUrl.startsWith("/")) {
-      const finalUrl = `http://13.127.116.243:5000${cleanUrl}`;
+      const finalUrl = `/api${cleanUrl}`;
       console.log("Constructed URL from relative path:", finalUrl);
       return finalUrl;
     }
     
     // Otherwise, treat it as a relative path needing a slash
-    const finalUrl = `http://13.127.116.243:5000/${cleanUrl}`;
+    const finalUrl = `/api/${cleanUrl}`;
     console.log("Constructed URL from unclear path:", finalUrl);
     return finalUrl;
   };

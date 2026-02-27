@@ -98,6 +98,17 @@
   font-weight: 700;
 }
 
+
+.api-status {
+  margin: -36px 0 22px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.api-status.checking { color: #9a6700; }
+.api-status.connected { color: #1a7f37; }
+.api-status.disconnected { color: #cf222e; }
 /* FORM */
 .login-form {
   display: block;
