@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { ExportIcon } from "./DashbaordHeader";
 
-const API_STAFF = "http://13.127.116.243:5000/api/staff";
-const API_TASKS = "http://13.127.116.243:5000/api/tasks";
+const API_STAFF = "/api/staff";
+const API_TASKS = "/api/tasks";
 
 const headers = {
   Accept: "application/json",

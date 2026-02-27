@@ -14,7 +14,7 @@ export default function UpcomingDeadlinesPage() {
   });
 
   const API_BASE =
-    "http://13.127.116.243:5000/api/ComplianceCalendar";
+    "/api/ComplianceCalendar";
 
   const headers = {
     Accept: "application/json",

@@ -18,10 +18,10 @@ const initialFormState = {
 };
  
 const API_URL =
-  "http://13.127.116.243:5000/api/clients";
+  "/api/clients";
  
 const ALL_CLIENTS_URL =
-  "http://13.127.116.243:5000/api/clients/all";
+  "/api/clients/all";
  
 const tableHeaderStyle = {
   padding: "12px 15px",

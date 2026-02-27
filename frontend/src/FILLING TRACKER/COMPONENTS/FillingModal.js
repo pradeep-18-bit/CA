@@ -13,10 +13,10 @@ export default function FilingModal({ form, onChange, onClose, onSubmit }) {
   const [loadingStaff, setLoadingStaff] = useState(true);
 
   const CLIENT_API =
-    "http://13.127.116.243:5000/api/clients";
+    "/api/clients";
 
   const STAFF_API =
-    "http://13.127.116.243:5000/api/staff";
+    "/api/staff";
 
   useEffect(() => {
     document.body.style.overflow = "hidden";

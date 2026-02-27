@@ -6,7 +6,7 @@ export default function SupportTicketsPage_staff() {
 
   // ⭐ FIXED: TASK LIST API (TRUE SOURCE)
   const API_URL =
-    "http://13.127.116.243:5000/api/tasks";
+    "/api/tasks";
 
   const [tickets, setTickets] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
