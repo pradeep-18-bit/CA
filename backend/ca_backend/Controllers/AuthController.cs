@@ -2,10 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ca_backend.Data;
-// Controllers/AuthController.cs
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ca_backend.Data;
 using ca_backend.Models;
 using BCrypt.Net;
 using System.IdentityModel.Tokens.Jwt;
@@ -154,9 +150,15 @@ public class AuthController : ControllerBase
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
-        var key = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!)
-        );
+        var jwtKey = _configuration["Jwt:Key"]?.Trim();
+        if (string.IsNullOrWhiteSpace(jwtKey) || Encoding.UTF8.GetByteCount(jwtKey) < 32)
+        {
+            throw new InvalidOperationException(
+                "JWT signing key is missing or too short. Configure Jwt:Key / Jwt__Key with at least 32 bytes for HS256."
+            );
+        }
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
 
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
