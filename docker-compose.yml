@@ -32,9 +32,10 @@ services:
       ASPNETCORE_URLS: http://+:5000
       ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
       ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=${POSTGRES_DB:-ca_db};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres}
-      Jwt__Key: ${JWT_KEY:-ChangeMeToAStrongSecretKey}
+      Jwt__Key: ${JWT_KEY:-ChangeMeToAStrongSecretKey_AtLeast32BytesLong}
       Jwt__Issuer: ${JWT_ISSUER:-ca_backend}
       Jwt__Audience: ${JWT_AUDIENCE:-ca_frontend}
+      Swagger__Enabled: ${SWAGGER_ENABLED:-true}
 
   frontend:
     build: ./frontend
