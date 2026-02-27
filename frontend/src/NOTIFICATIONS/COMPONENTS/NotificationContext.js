@@ -14,7 +14,7 @@
 //     if (!email) return;
 
 //     fetch(
-//       `http://13.127.116.243:5000/api/notifications/recent?email=${email}`,
+//       `/api/notifications/recent?email=${email}`,
 //       { headers: { "ngrok-skip-browser-warning": "true" } }
 //     )
 //       .then(res => res.json())
@@ -30,7 +30,7 @@
 //     if (!email) return;
 
 //     const es = new EventSource(
-//       `http://13.127.116.243:5000/api/notifications/sse?email=${email}`
+//       `/api/notifications/sse?email=${email}`
 //     );
 
 //     es.onmessage = (event) => {
@@ -81,7 +81,7 @@
 
 //   try {
 //     await fetch(
-//       "http://13.127.116.243:5000/api/notifications/mark-all-read",
+//       "/api/notifications/mark-all-read",
 //       {
 //         method: "POST",
 //         headers: {
@@ -138,7 +138,7 @@ export const NotificationProvider = ({ children }) => {
     if (!email) return;
 
     fetch(
-      `http://13.127.116.243:5000/api/notifications/recent?email=${email}`,
+      `/api/notifications/recent?email=${email}`,
       { headers: { "ngrok-skip-browser-warning": "true" } }
     )
       .then(res => res.json())
@@ -163,7 +163,7 @@ export const NotificationProvider = ({ children }) => {
     if (!email) return;
 
     const es = new EventSource(
-      `http://13.127.116.243:5000/api/notifications/sse?email=${email}`
+      `/api/notifications/sse?email=${email}`
     );
 
     es.onmessage = (event) => {
@@ -206,7 +206,7 @@ export const NotificationProvider = ({ children }) => {
 
     try {
       await fetch(
-        "http://13.127.116.243:5000/api/notifications/mark-all-read",
+        "/api/notifications/mark-all-read",
         {
           method: "POST",
           headers: {

@@ -2,9 +2,9 @@
 // import React, { useState, useEffect } from "react";
 
 // const CLIENTS_ALL_API =
-//   "http://13.127.116.243:5000/api/clients/all";
+//   "/api/clients/all";
 // const CLIENTS_API =
-//   "http://13.127.116.243:5000/api/clients";
+//   "/api/clients";
 
 // export default function TaskModal({
 //   task,
@@ -311,9 +311,9 @@
 import React, { useState, useEffect } from "react";
 
 const CLIENTS_ALL_API =
-  "http://13.127.116.243:5000/api/clients/all";
+  "/api/clients/all";
 const CLIENTS_API =
-  "http://13.127.116.243:5000/api/clients";
+  "/api/clients";
 
 export default function TaskModal({
   task,

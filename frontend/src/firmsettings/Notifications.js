@@ -14,7 +14,7 @@
 
 // export default function Filmnotifaction() {
 //   const API =
-//     "http://13.127.116.243:5000/api/notification-setting";
+//     "/api/notification-setting";
 
 //   // STATES
 //   const [gstReminder, setGstReminder] = useState(true);
@@ -300,7 +300,7 @@ export default function Filmnotifaction() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const API_URL = "http://13.127.116.243:5000/api/notification-setting";
+  const API_URL = "/api/notification-setting";
 
   // Fetch notification settings on component mount
   useEffect(() => {

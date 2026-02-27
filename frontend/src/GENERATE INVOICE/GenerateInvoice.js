@@ -5,9 +5,9 @@ import html2canvas from "html2canvas";
 // import CaLogo from "./ca-logo.jpg";
 
 const API_BASE =
-  "http://13.127.116.243:5000/api/invoices";
+  "/api/invoices";
 const CLIENTS_API =
-  "http://13.127.116.243:5000/api/clients";
+  "/api/clients";
 const GST_RATE = 0.18;
 
 export default function GenerateInvoicePage() {

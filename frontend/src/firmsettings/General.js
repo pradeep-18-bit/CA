@@ -14,7 +14,7 @@
 //   );
 // }
 
-// const API = "http://13.127.116.243:5000/api/general-setting";
+// const API = "/api/general-setting";
 
 // export default function General() {
 //   const [formData, setFormData] = useState({
@@ -297,7 +297,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const API_BASE_URL = "http://13.127.116.243:5000/api";
+const API_BASE_URL = "/api";
 
 export default function General() {
   const [formData, setFormData] = useState({

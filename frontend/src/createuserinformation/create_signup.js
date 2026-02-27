@@ -148,7 +148,7 @@
 
 //     try {
 //       const response = await fetch(
-//         "http://13.127.116.243:5000/api/User/create-user",
+//         "/api/User/create-user",
 //         {
 //           method: "POST",
 //           headers: {
@@ -512,7 +512,7 @@ function Signuppage() {
 
     try {
       const response = await fetch(
-        "http://13.127.116.243:5000/api/User/create-user",
+        "/api/User/create-user",
         {
           method: "POST",
           headers: {

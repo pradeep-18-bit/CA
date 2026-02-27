@@ -69,7 +69,7 @@
 //     const loadDueToday = async () => {
 //       try {
 //         const res = await fetch(
-//           "http://13.127.116.243:5000/api/ComplianceCalendar",
+//           "/api/ComplianceCalendar",
 //           {
 //             headers: {
 //               Accept: "application/json",
@@ -119,7 +119,7 @@
 //     const loadPendingInvoices = async () => {
 //       try {
 //         const res = await fetch(
-//           "http://13.127.116.243:5000/api/invoices",
+//           "/api/invoices",
 //           {
 //             headers: {
 //               Accept: "application/json",
@@ -407,7 +407,7 @@ export default function Topbar() {
     const loadDueToday = async () => {
       try {
         const res = await fetch(
-          "http://13.127.116.243:5000/api/ComplianceCalendar",
+          "/api/ComplianceCalendar",
           {
             headers: {
               Accept: "application/json",
@@ -449,7 +449,7 @@ export default function Topbar() {
     const loadPendingInvoices = async () => {
       try {
         const res = await fetch(
-          "http://13.127.116.243:5000/api/invoices",
+          "/api/invoices",
           {
             headers: {
               Accept: "application/json",

@@ -5,7 +5,7 @@ export default function PendingInvoicesPageStaff() {
   const navigate = useNavigate();
 
   const API_URL =
-    "http://13.127.116.243:5000/api/invoices";
+    "/api/invoices";
 
   const [invoices, setInvoices] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
