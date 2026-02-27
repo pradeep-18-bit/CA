@@ -2,6 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ca_backend.Data;
+// Controllers/AuthController.cs
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ca_backend.Data;
 using ca_backend.Models;
 using BCrypt.Net;
 using System.IdentityModel.Tokens.Jwt;
@@ -132,6 +136,14 @@ public class AuthController : ControllerBase
         });
     }
 
+    // 🔥 TEMP PASSWORD HASH GENERATOR (REMOVE AFTER TESTING)
+    [HttpGet("generate-hash/{password}")]
+    public IActionResult GenerateHash(string password)
+    {
+        var hash = BCrypt.Net.BCrypt.HashPassword(password);
+        return Ok(hash);
+    }
+
     private string GenerateJwtToken(string email, string role)
     {
         var claims = new[]
@@ -142,7 +154,10 @@ public class AuthController : ControllerBase
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
+        var key = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!)
+        );
+
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(

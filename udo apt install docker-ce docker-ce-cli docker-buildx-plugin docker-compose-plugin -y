@@ -1,0 +1,22 @@
+[0;1;32m●[0m containerd.service - containerd container runtime
+     Loaded: loaded (]8;;file://ip-172-31-36-44/usr/lib/systemd/system/containerd.service/usr/lib/systemd/system/containerd.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Fri 2026-02-27 08:00:02 UTC; 7s ago
+       Docs: ]8;;https://containerd.iohttps://containerd.io]8;;
+    Process: 33949 ExecStartPre=/sbin/modprobe overlay (code=exited, status=0/SUCCESS)
+   Main PID: 33952 (containerd)
+      Tasks: 9
+     Memory: 13.1M (peak: 13.9M)
+        CPU: 63ms
+     CGroup: /system.slice/containerd.service
+             └─[0;38;5;245m33952 /usr/bin/containerd[0m
+
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075159388Z" level=info msg="loading plugin" id=io.containerd.tracing.processor.v1.otlp type=io.containerd.tracing.processor.v1
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075171468Z" level=info msg="skip loading plugin" error="skip plugin: tracing endpoint not configured" id=io.containerd.tracing.processor.v1.otlp type=io.containerd.tracing.processor.v1
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075178562Z" level=info msg="loading plugin" id=io.containerd.internal.v1.tracing type=io.containerd.internal.v1
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075185968Z" level=info msg="skip loading plugin" error="skip plugin: tracing endpoint not configured" id=io.containerd.internal.v1.tracing type=io.containerd.internal.v1
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075192713Z" level=info msg="loading plugin" id=io.containerd.ttrpc.v1.otelttrpc type=io.containerd.ttrpc.v1
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075202087Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.healthcheck type=io.containerd.grpc.v1
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075514065Z" level=info msg=serving... address=/run/containerd/containerd.sock.ttrpc
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075573905Z" level=info msg=serving... address=/run/containerd/containerd.sock
+Feb 27 08:00:02 ip-172-31-36-44 containerd[33952]: time="2026-02-27T08:00:02.075621931Z" level=info msg="containerd successfully booted in 0.032030s"
+Feb 27 08:00:02 ip-172-31-36-44 systemd[1]: Started containerd.service - containerd container runtime.
