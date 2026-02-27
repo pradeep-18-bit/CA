@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Builder;
-using ca_backend.Data; // Confirmed by your grep
+using ca_backend.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -7,16 +7,26 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Database Connection - USING AppDbContext
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// ===============================
+// 1. Database Connection
+// ===============================
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
+
+
+// ===============================
 // 2. CORS Policy
+// ===============================
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
 
@@ -24,25 +34,52 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 3. JWT Configuration
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "YourSuperSecretKey123!";
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+
+// ===============================
+// 3. JWT Configuration (FIXED)
+// ===============================
+var jwtKey = builder.Configuration["Jwt:Key"];
+var jwtIssuer = builder.Configuration["Jwt:Issuer"];
+var jwtAudience = builder.Configuration["Jwt:Audience"];
+
+// 🚨 Fail fast if config missing
+if (string.IsNullOrEmpty(jwtKey))
+{
+    throw new Exception("JWT Key is missing in configuration.");
+}
+
+builder.Services
+    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
-        };
+        options.TokenValidationParameters =
+            new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+
+                ValidIssuer = jwtIssuer,
+                ValidAudience = jwtAudience,
+
+                IssuerSigningKey =
+                    new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(jwtKey)
+                    )
+            };
     });
 
+
+// ===============================
+// 4. Build App
+// ===============================
 var app = builder.Build();
 
+
+// ===============================
+// 5. Middleware Pipeline
+// ===============================
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -50,6 +87,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowAll");
+
 app.UseStaticFiles();
 
 app.UseAuthentication();
@@ -57,4 +95,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run("http://0.0.0.0:5000"); // Bind for Docker
+
+// ===============================
+// 6. Docker Binding
+// ===============================
+app.Run("http://0.0.0.0:5000");
