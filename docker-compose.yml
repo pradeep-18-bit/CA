@@ -4,38 +4,42 @@ services:
   postgres:
     image: postgres:16
     container_name: postgres_db
-    restart: always
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: ca_db
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-ca_db}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-ca_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   backend:
     build: ./backend
     container_name: backend_app
-    restart: always
+    restart: unless-stopped
     ports:
       - "5000:5000"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     environment:
-      # ✅ FIX: Force Kestrel to listen on port 5000 inside the container
-      - ASPNETCORE_URLS=http://+:5000
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=ca_db;Username=postgres;Password=postgres
-      # Add JWT settings if they aren't in your appsettings.json
-      - Jwt__Key=YourSuperSecretKeyHere1234567890 
-      - Jwt__Issuer=ca_backend
-      - Jwt__Audience=ca_frontend
+      ASPNETCORE_URLS: http://+:5000
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Production}
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=${POSTGRES_DB:-ca_db};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres}
+      Jwt__Key: ${JWT_KEY:-ChangeMeToAStrongSecretKey}
+      Jwt__Issuer: ${JWT_ISSUER:-ca_backend}
+      Jwt__Audience: ${JWT_AUDIENCE:-ca_frontend}
 
   frontend:
     build: ./frontend
     container_name: frontend_app
-    restart: always
+    restart: unless-stopped
     ports:
       - "80:80"
     depends_on:
